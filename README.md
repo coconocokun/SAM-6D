@@ -58,6 +58,23 @@ cd SAM-6D
 sh demo.sh
 ```
 
+## Using docker
+### 1. Preparation
+```
+docker pull cocoforuiuc/sam6d:1.0
+```
+
+### 2. Run docker container
+```
+docker run --gpus all -it --name sam6d -v $(pwd)/SAM-6D/Data:/workspace/SAM-6D/SAM-6D/Data cocoforuiuc/sam6d:1.0
+```
+
+### 3. Run the demo.sh
+```
+cd workspace/SAM-6D/SAM-6D
+conda activate sam6d
+sh demo.sh
+```
 
 
 ## Citation
