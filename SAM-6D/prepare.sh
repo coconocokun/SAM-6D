@@ -1,6 +1,7 @@
 ### Create conda environment
-conda env create -f environment.yaml
-conda activate sam6d
+apt-get install -y wget
+#conda env create -f environment.yaml
+#conda activate sam6d
 
 ### Install pointnet2
 cd Pose_Estimation_Model/model/pointnet2

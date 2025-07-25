@@ -1,10 +1,16 @@
 # Render CAD templates
+export CAD_PATH=/workspace/SAM-6D/SAM-6D/Data/Example/obj_000005.ply
+export RGB_PATH=/workspace/SAM-6D/SAM-6D/Data/Example/rgb.png
+export DEPTH_PATH=/workspace/SAM-6D/SAM-6D/Data/Example/depth.png
+export CAMERA_PATH=/workspace/SAM-6D/SAM-6D/Data/Example/camera.json
+export OUTPUT_DIR=/workspace/SAM-6D/SAM-6D/Data/Example/outputs
+
 cd Render
 blenderproc run render_custom_templates.py --output_dir $OUTPUT_DIR --cad_path $CAD_PATH #--colorize True 
 
 
 # Run instance segmentation model
-export SEGMENTOR_MODEL=sam
+export SEGMENTOR_MODEL=fastsam
 
 cd ../Instance_Segmentation_Model
 python run_inference_custom.py --segmentor_model $SEGMENTOR_MODEL --output_dir $OUTPUT_DIR --cad_path $CAD_PATH --rgb_path $RGB_PATH --depth_path $DEPTH_PATH --cam_path $CAMERA_PATH
